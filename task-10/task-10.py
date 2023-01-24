@@ -1,8 +1,8 @@
 import tweepy
-import tokens
+import token
 # OAuth authentication
-auth = tweepy.OAuthHandler(tokens.consumer_key, tokens.consumer_secret)
-auth.set_access_token(tokens.access_token, tokens.access_token_secret)
+auth = tweepy.OAuthHandler(token.consumer_key, token.consumer_secret)
+auth.set_access_token(token.access_token, token.access_token_secret)
 # Create an API object
 api = tweepy.API(auth)
 # Get the message to tweet from the user

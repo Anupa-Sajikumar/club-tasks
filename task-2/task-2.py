@@ -12,3 +12,5 @@ def calculate_captcha(image_file):
 image_file = 'C:\\Users\\anupa\\OneDrive\\Documents\\clubtasks\\club-tasks\\task-2\\picture_capcha.jpg'
 result = calculate_captcha(image_file)
 print(result)
+eval(result)
+print(result)
