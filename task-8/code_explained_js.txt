@@ -1,0 +1,27 @@
+const pokedex = document.getElementById('pokedex');: This line declares a constant variable called "pokedex" and assigns it to the element with the id of "pokedex" in the HTML document.
+
+const fetchPokemon = () => {: This line declares a constant variable called "fetchPokemon" and assigns it to an arrow function. This function is used to retrieve data on all 150 Pokemon from the PokeAPI.
+
+const promises = [];: This line declares a constant variable called "promises" and assigns it to an empty array. This array will be used to store promises returned by the fetch() function.
+
+for (let i = 1; i <= 150; i++) {: This line begins a for loop that will iterate 150 times, with the variable "i" starting at 1 and ending at 150.
+
+const url = 'https://pokeapi.co/api/v2/pokemon' ;: This line declares a constant variable called "url" and assigns it to the base URL for the PokeAPI.
+
+promises.push(fetch(url).then((res) => res.json()));: This line uses the fetch() function to retrieve data from the PokeAPI at the specified URL, and then converts the response to JSON format. The resulting promise is pushed to the "promises" array.
+
+Promise.all(promises).then((results) => {: This line uses the Promise.all() method to wait for all of the promises in the "promises" array to resolve, and then assigns the resulting values to the "results" variable.
+
+const pokemon = results.map((result) => ({: This line declares a constant variable called "pokemon" and assigns it to the result of mapping over the "results" array and returning an object for each result containing specific properties of the Pokemon.
+
+displayPokemon(pokemon);: This line calls the "displayPokemon" function and passes in the "pokemon" variable as an argument.
+
+const displayPokemon = (pokemon) => {: This line declares a constant variable called "displayPokemon" and assigns it to an arrow function. This function is used to display the retrieved Pokemon data on the webpage.
+
+console.log(pokemon);: This line logs the "pokemon" variable to the console.
+
+const pokemonHTMLString = pokemon: This line declares a constant variable called "pokemonHTMLString" and assigns it to the result of mapping over the "pokemon" array and returning a string of HTML for each Pokemon.
+
+pokedex.innerHTML = pokemonHTMLString;: This line sets the innerHTML of the "pokedex" element to the "pokemonHTMLString" variable.
+
+fetchPokemon();: This line calls the "fetchPokemon" function to initiate the process of retrieving and displaying Pokemon data on the webpage.

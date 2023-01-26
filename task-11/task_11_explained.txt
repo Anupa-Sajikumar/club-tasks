@@ -1,0 +1,41 @@
+"import telebot" imports the telebot library which is used to interact with the Telegram API.
+
+"import random" imports the random library which is used to randomly select the bot's choice in the game.
+
+"bot_token = '5797937881:AAGerc-7xNZc-puL6mKAKGANDzoDhmIik1s'" assigns the bot's token to a variable. This token is used to authenticate the bot with Telegram.
+
+"bot = telebot.TeleBot(bot_token)" creates an instance of the telebot library using the bot's token.
+
+"@bot.message_handler(commands=['start', 'help'])" is a decorator that tells the bot to call the function "send_welcome" when it receives the "/start" or "/help" command.
+
+"def send_welcome(message):" defines the "send_welcome" function which takes in a "message" parameter.
+
+"bot.reply_to(message, "Welcome to the stone-Paper-Scissors game! Please type /play to start a game.")" sends a message back to the user that the bot has received 
+the "/start" or "/help" command and prompts them to type "/play" to start the game.
+
+"@bot.message_handler(commands=['play'])" is a decorator that tells the bot to call the function "play_game" when it receives the "/play" command.
+
+"def play_game(message):" defines the "play_game" function which takes in a "message" parameter.
+
+"bot.reply_to(message, "Please type stone, paper, or scissors.")" sends a message to the user asking them to type "stone", "paper", or "scissors".
+
+"bot.register_next_step_handler(message, process_choice)" tells the bot to call the "process_choice" function to handle the user's next message.
+
+"def process_choice(message):" defines the "process_choice" function which takes in a "message" parameter.
+
+"user_choice = message.text.lower()" assigns the user's choice to the variable "user_choice" and makes it lowercase.
+
+"options = ["stone", "paper", "scissors"]" creates a list of the valid options for the game.
+
+"if user_choice in options:" checks if the user's choice is in the list of valid options.
+
+"bot_choice = random.choice(options)" selects a random choice from the list of valid options for the bot's choice.
+
+"result = determine_winner(user_choice, bot_choice)" calls the "determine_winner" function and assigns the result to the variable "result".
+
+"bot.reply_to(message, f"You chose {user_choice} and the bot chose {bot_choice}. {result}")" sends a message to the user with their choice, the bot's choice, 
+and the result of the game.
+
+"else:" if the user's choice is not in the list of valid options, the bot sends a message to the user telling them their choice is invalid and prompts them to try again.
+
+"bot.register_next_step_handler(message, process_choice)" tells the bot to call the "process_choice" function to handle the user's next message

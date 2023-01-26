@@ -1,0 +1,17 @@
+<!DOCTYPE html> - This declares that the document is an HTML5 document.
+
+<html> - This is the root element of an HTML document. All other elements must be contained within this element.
+
+<head> - This element contains metadata about the document, such as the title and styles.
+
+<title>Login Form</title> - This element sets the title of the document, which is displayed in the browser's title bar or tab.
+
+<style> - This element contains CSS styles that are applied to the elements in the document.
+
+form {...} - This CSS rule styles the <form> element. The properties set in this rule include the width, margin, padding, border, and border radius of the form.
+
+label {...} - This CSS rule styles the <label> elements. The properties set in this rule include the display, margin-bottom.
+
+input[type="text"], input[type="email"], input[type="password"] {...} - This CSS rule styles the <input> elements with the types of "text", "email" and "password" respectively. The properties set in this rule include the width, padding, margin-bottom, border, and border-radius of the inputs.
+
+input[type="submit"] {...} - This CSS rule styles the `<input>

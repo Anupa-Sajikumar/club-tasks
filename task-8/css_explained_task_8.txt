@@ -1,0 +1,7 @@
+body { background-color: rgb(227, 22, 22); color: white; margin: 0; font-family: rubik; }: This line applies styling to the body element of the HTML document, setting the background color to red, text color to white, removing the margin, and setting the font-family to 'Rubik'.
+
+.container { padding: 40px; margin: 0 auto; }: This line applies styling to elements with the class of "container", adding 40px of padding and centering the element horizontally on the page.
+
+h1 { text-transform: uppercase; text-align: center; font-size: 54px; }: This line applies styling to h1 elements, making the text uppercase, center-aligned, and with a font size of 54px.
+
+#pokedex { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); grid-gap: 20px; padding-inline-start: 0; }: This line applies styling to the element with the id of "pokedex", setting its display to grid, defining the grid-template-columns as repeating and automatically fitting to the size of the container, with a minimum width of 320px and a maximum width of 1 fraction unit

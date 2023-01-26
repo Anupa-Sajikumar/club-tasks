@@ -1,0 +1,6 @@
+The code imports the pytesseract and PIL library, which are used for Optical Character Recognition (OCR) and image processing respectively. 
+The code defines a function "calculate_captcha" that takes in an "image_file" as an input. 
+The function uses the PIL library to open the image file and then uses the pytesseract library to extract text from the image. 
+The extracted text is then passed as an argument to the python built-in function "eval" which evaluates the mathematical expression and returns the result. This result is stored in the variable "result" and returned by the function. The code then tests the function by passing an image file path and printing the result.
+It should be noted that using the eval function to evaluate user input is dangerous as it allows arbitrary code execution.
+It is generally recommended to avoid using it.
