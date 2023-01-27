@@ -1,36 +1,23 @@
 const pokedex = document.getElementById('pokedex');
 
-const fetchPokemon = () => {
-    const promises = [];
-    for (let i = 1; i <= 150; i++) {
+const fetchPokemon = async() => {
         const url = 'https://pokeapi.co/api/v2/pokemon' ;
-        promises.push(fetch(url).then((res) => res.json()));
-    }
-    Promise.all(promises).then((results) => {
-        const pokemon = results.map((result) => ({
-            name: result.name,
-            image: result.sprites['front_default'],
-            type: result.types.map((type) => type.type.name).join(', '),
-            id: result.id
-        }));
-        displayPokemon(pokemon);
-    });
+        const result = fetch(url).then((res)=>res.json())
+        result.then(result=>{
+            result.results.map((async pokemon=>{
+                fetch(pokemon.url).then( async (pokemonDetails) => {
+                  const fetchPokemon = await pokemonDetails.json()
+                  const innerHtml = `
+                  <li class="card">
+                  <img class="card-image" src="${fetchPokemon.sprites.front_default}"/>
+                  <h2 class="card-title">${fetchPokemon.id}. ${fetchPokemon.name}</h2>
+                  <p class="card-subtitle">Type: ${(fetchPokemon.types.map(type=>type.type.name))}</p>
+                    </li>
+                   `
+                    pokedex.innerHTML += innerHtml
+                })
+              
+            }))
+        })
 };
-
-const displayPokemon = (pokemon) => {
-    console.log(pokemon);
-    const pokemonHTMLString = pokemon
-        .map(
-            (pokeman) => `
-        <li class="card">
-            <img class="card-image" src="${pokeman.image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            <p class="card-subtitle">Type: ${pokeman.type}</p>
-        </li>
-    `
-        )
-        .join('');
-    pokedex.innerHTML = pokemonHTMLString;
-};
-
 fetchPokemon();
