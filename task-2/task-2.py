@@ -9,7 +9,6 @@ def calculate_captcha(image_file):
     result = eval(text)
     return result
 # Test the function
-image_file = 'C:\\Users\\anupa\\OneDrive\\Documents\\clubtasks\\club-tasks\\task-2\\add_nos_capcha.jpg'
+image_file = 'task-2/add_nos_capcha.jpg'
 result = calculate_captcha(image_file)
 print(result)
-eval(result)
