@@ -13,4 +13,3 @@ image_file = 'C:\\Users\\anupa\\OneDrive\\Documents\\clubtasks\\club-tasks\\task
 result = calculate_captcha(image_file)
 print(result)
 eval(result)
-print(result)
